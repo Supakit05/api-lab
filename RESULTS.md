@@ -42,3 +42,26 @@ Endpoint: PUT /api/ratings/{id}
 Boundary values 0 and 6 are rejected, while 1 and 5 are accepted.
 
 Test Results: 4 passed.
+
+
+## Part A4 — Rating Ownership
+
+### Test Results
+
+| Operation | Actual Status | Result |
+|---|---|---|
+| GET another user's rating | 404 | PASSED |
+| PUT another user's rating | 400 | PASSED |
+| DELETE another user's rating | 400 | PASSED |
+
+### Observation
+
+A user cannot read, update, or delete a rating owned by another user.
+
+GET returns HTTP 404 with "not found".
+
+PUT and DELETE return HTTP 400 with a message indicating that the rating ID was not found.
+
+The original rating remains unchanged and accessible to its owner.
+
+All 3 ownership tests passed.
