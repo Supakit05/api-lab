@@ -26,3 +26,19 @@
 - 17 passed
 - 1 xfailed
 - 0 failed
+
+
+## Part A3 — Boundary Value Testing
+
+Endpoint: PUT /api/ratings/{id}
+
+| Stars | Expected Status | Result |
+|---|---|---|
+| 0 | 400 | PASSED |
+| 1 | 200 | PASSED |
+| 5 | 200 | PASSED |
+| 6 | 400 | PASSED |
+
+Boundary values 0 and 6 are rejected, while 1 and 5 are accepted.
+
+Test Results: 4 passed.
