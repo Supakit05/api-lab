@@ -9,3 +9,20 @@
   - Run 1: FAILED
   - Run 2: FAILED
   - Run 3: FAILED
+
+## Step 0.16 — Bug Hunt Checkpoint
+
+### Defect 1: Excluding all tools
+
+- Endpoint: POST /api/pizza
+- Input: {"excludedTools": ["Knife", "Pizza cutter", "Scissors"]}
+- Expected: HTTP 400 with a JSON error message
+- Actual: HTTP 500
+- Description: The API returns an internal server error when all available tools are excluded.
+- Test handling: pytest.mark.xfail(reason="Defect 1", strict=True)
+
+### Test Results
+
+- 17 passed
+- 1 xfailed
+- 0 failed
